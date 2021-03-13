@@ -10,9 +10,9 @@ python:
   - "3.9"
 install: 
   - pip install tox-travis
-  - version="1.0.4"
+  - version="1.0.5"
   - export version
-  - TRAVIS_TAG="v$version"
+#  - TRAVIS_TAG="v$version"
   - echo "$TRAVIS_TAG"
   - echo "$TRAVIS_COMMIT"
   - echo "$TRAVIS_BUILD_NUMBER"
