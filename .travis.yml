@@ -7,11 +7,11 @@ python:
 #  - "3.6"
 #  - "3.7"
 #  - "3.8"
-#  - "3.9"
+  - "3.9"
 install: pip install tox-travis
 script: tox
 before_deploy:
-#  - TRAVIS_TAG=v1.0.2
+  - TRAVIS_TAG=v1.0.2
   - echo "$TRAVIS_TAG" 
   - echo "$TRAVIS_COMMIT"
   - echo "$TRAVIS_BUILD_NUMBER"
@@ -21,7 +21,7 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: KVhL8ogtB+g2yZTBDcaz6TpLofwg7AROXdq9wzyDbxDUmQGWe7k95s+jZlyPBEXXxzbQ6+vGhsOIE4QDgIlDCAlLGXzbN8pQ+KJbp9WXrJsvtTuJk87yV2ayntcYhrTbIs4qsKoZ9bs/cRqZVu+yNlsEQ7lJYiIVDmR7IpZg8nQw7xvMy6oh3bU+LH8lGHOH0ZiWkOK1cOM+ciLIUydzu+Hn5JBvTRmuR22QY4fTSjOj3baElWLGnzIebFGtQdlgmteYHupbhTzqtfORgVfZy+EIXy9giZk/mCy+NQ3TV90w2OznX4qBXj+rtl+Eif0CY5a0pc8aZLf/3FMDo7e9MD4lwqypUOKCdkxAeDmohhZYGJA3yBTlqi7seEXYLIoJwi84vK4EMSS2nvaa7vqwimX3vLe923jcU6/d2kHqijCDlYhf8GZOlJhFmTdDI6AqOujMiH6ftphCxtw+5BepYSRj/ncFHrDLNbBAqnOS5EBJx35ihgLXOQks0lOZxHffYVetr2qzrU/5yisufuc90XMXy+sQ8mRd3Q+tO/JlweVGFcD1oEKi3Gz6ZmFBmsoI/4TJ0njY5GDCIPEzp4PECGAYN/U9qdSw3eHNzUPJfDuzfW5QAV6LAf3hUq2poQkXUXeIK0s7SA3h/PefWoSMfTudq0l53+RW0/JnFEBLeys=
+    secure: eOU9udkkFEgkhY9V12f0lFAw8JyT53S5h56PbGmCkcRf4Pb46D8NwUDbfJEUa5GqyfVxb9V453PC7YmMSJe1XTgvgG85TOkNPu9Q3tVT38rFyCS/+tlNQIELBriYzBr1ymkVv73BWbhB5U+LQa+jvK5J3joIlMz2UTZlIeRP7BgyYj0sbSy8z7g15wYutig3TEEjRe8YvG6bWki2UDF0QJan4nuY1Ru1fYaEBNyzIfKCMZaNDZ4KWhzv9WfFeiFTQeXfvUsqvO0YNa64JiB0/XR2EdFoyo6dXKo8NoiJaG5TaFI4RkVfRgNSczaB9qZ6iECH2cJO2G22QMFhzEDesy/MTbBpkOcnPio0f7Ok9sMQ6qB+gArpXR+cg5RZxYZnvS8T8dsNQVS+9Hy9wpcuxgBTuvb+w49KvyaebOmp2zrmGkO+xlZWaHo86Tm8FgeZndHNWjax4pyeZ7hrPUEBD0lBHXqqJrQZKKraL+WEw3ENiIOcksLOCxZQrTLMUVkG6YR7oFqfjpdgIW/Nd2NnCJhg6emepxp6RnI4skxyJAuwzffrptDBy+CQbBbfiIwEExB1Bv228zSEEDkxvinBm01e6oMvJ5iHKyzubvzz+2cykw5LwY6bmQpDifjsleO7MOZCogXeUFiblY+ncWwB9dOExhbpGu37i+4QZxvjWnQ=
   file: ${RELEASE_PKG_FILE}
   skip_cleanup: true
   on:
