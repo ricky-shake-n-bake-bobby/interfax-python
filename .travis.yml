@@ -19,6 +19,7 @@ script: tox
 before_deploy:
   - python setup.py sdist --formats=zip -k
   - find ./dist -iname "*.zip" -print0 | xargs -0 pip install
+  - echo "$FILE_LOCATION"
 deploy:
   provider: releases
   api_key:
