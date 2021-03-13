@@ -10,7 +10,7 @@ python:
   - "3.9"
 install: 
   - pip install tox-travis
-  - version="1.0.1"
+  - version="1.0.4"
   - echo "$TRAVIS_TAG"
   - TRAVIS_TAG="v$version"
   - echo "$TRAVIS_COMMIT"
@@ -32,6 +32,8 @@ deploy:
   username: "__token__"
   password:
     secure: XrBrHda//juXXlpZLnFp2EQf//53oh2FbcyncL5Yyqq7J2cDZzqRaP4k2ztUPNN7Kg7r44oJCzKgpEbFzt1s5oiJJtF1Vk0UImpkKfnQ2A1NPS0Tyh3zBJelaDdM2Oo09+wLBTd56F5ysdUTfcIQYiWc509oumjZG/flSJYmYv+U90WNnxwraKl9XGkJAL1Rxw2RrAa7VSNRzGq0BcWSV3wRxV9QYLWLN4ojjMQtho5t8HAW+oRXTqlehsbNR6x93yWxNAhLwrOuga/J2ZsaHzJ98YN8yK2oQwcAP6foD0ESr3p8q8m3WNWBGKZez5KPXRg9U4M9AqwVQDiptLOr6RS1V0avUl+EHWv8SIKPvGLJNOA9x/ks9TJKoLhol+Flfb6eu2MPrUQE324xaCNyNLpKwFD5kHTAvn5++FXgXzT+/7h2ONfoPJXpaMOuJMw9supmmNEck8L5xgsQgLtLcLOQRwrSNv1q1o9RqqKEpqiwG8ipFAt2VQFqq2uYbgJxhTv8NVkW0VPm9yyXeMqDT3rQAUD39FsVoUVUJ+aTsMOG95R1Vhrf/zsNEQiSPUHRvrZic0TlcD4D4LLMCF552jgjC9tmda6ItEBoShsA3OETTXpj2CeE69Xka/HVLJW4w0A+r+aLZzQKmzKG665bTzczkmeaKDD01vt4/YtsJtY=
+  distributions: "sdist bdist_wheel"
+  skip_existing: true
   skip_cleanup: true
   on:
     tags: true
