@@ -18,7 +18,7 @@ with open('interfax/__init__.py', 'rb') as f:
 with open('README.rst', 'rb') as f:
     README = f.read().decode('utf-8')
 
-os.environ['FILE_LOCATION'] = './dist/interfax-interfax-' + version + '.zip'
+os.environ['FILE_LOCATION'] = './dist/interfax-' + version + '.zip'
 print('FILE_LOCATION: ' + os.environ['FILE_LOCATION'])
 setup(
     name='interfax',
