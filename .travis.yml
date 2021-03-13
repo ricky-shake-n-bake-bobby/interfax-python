@@ -21,6 +21,7 @@ before_deploy:
   - find ./dist -iname "*.zip" -print0 | xargs -0 pip install
   - export RELEASE_PKG_FILE=$FILE_LOCATION
   - echo FILE_LOCATION
+  - echo "$FILE_LOCATION"
 deploy:
   provider: releases
   api_key:
