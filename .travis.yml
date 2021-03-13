@@ -1,23 +1,23 @@
 sudo: false
 language: python
 python:
-  - "2.7"
-  - "3.4"
-  - "3.5"
-  - "3.6"
-  - "3.7"
-  - "3.8"
-  - "3.9"
+#  - "2.7"
+#  - "3.4"
+#  - "3.5"
+#  - "3.6"
+#  - "3.7"
+#  - "3.8"
+#  - "3.9"
 install: pip install tox-travis
 script: tox
 before_deploy:
-#- TRAVIS_TAG=v1.0.2
-- echo "$TRAVIS_TAG" 
-- echo "$TRAVIS_COMMIT"
-- echo "$TRAVIS_BUILD_NUMBER"
-- git tag $TRAVIS_TAG $TRAVIS_COMMIT
-- python setup.py sdist --formats=zip -k
-- find ./dist -iname "*.zip" -print0 | xargs -0 pip install
+#  - TRAVIS_TAG=v1.0.2
+  - echo "$TRAVIS_TAG" 
+  - echo "$TRAVIS_COMMIT"
+  - echo "$TRAVIS_BUILD_NUMBER"
+  - git tag $TRAVIS_TAG $TRAVIS_COMMIT
+  - python setup.py sdist --formats=zip -k
+  - find ./dist -iname "*.zip" -print0 | xargs -0 pip install
 deploy:
   provider: releases
   api_key:
