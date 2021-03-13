@@ -3,7 +3,7 @@ interfax
 ========
 
 """
-
+import os
 import ast
 import re
 
@@ -18,7 +18,7 @@ with open('interfax/__init__.py', 'rb') as f:
 with open('README.rst', 'rb') as f:
     README = f.read().decode('utf-8')
 
-export INIT_VERSION=version
+os.environ['INIT_VERSION'] = version
 echo $INIT_VERSION
 
 setup(
