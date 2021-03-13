@@ -10,18 +10,18 @@ python:
   - "3.9"
 install: 
   - pip install tox-travis
-  - TRAVIS_TAG=v1.0.1
-  - echo "$TRAVIS_TAG" 
+  - version="1.0.1"
+  - echo "$TRAVIS_TAG"
+  - TRAVIS_TAG="v$version"
   - echo "$TRAVIS_COMMIT"
   - echo "$TRAVIS_BUILD_NUMBER"
   - git tag $TRAVIS_TAG $TRAVIS_COMMIT
+  - echo "interfax-$version.zip"
+  - export RELEASE_PKG_FILE=".dist/interfax-$version.zip"
 script: tox
 before_deploy:
   - python setup.py sdist --formats=zip -k
   - find ./dist -iname "*.zip" -print0 | xargs -0 pip install
-  - export RELEASE_PKG_FILE=$FILE_LOCATION
-  - echo FILE_LOCATION
-  - echo "$FILE_LOCATION"
 deploy:
   provider: releases
   api_key:
