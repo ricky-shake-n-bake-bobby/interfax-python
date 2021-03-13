@@ -19,7 +19,7 @@ with open('README.rst', 'rb') as f:
     README = f.read().decode('utf-8')
 
 os.environ['INIT_VERSION'] = version
-
+print('Init Version:' + os.environ['INIT_VERSION'])
 setup(
     name='interfax',
     version=version,
