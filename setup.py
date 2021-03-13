@@ -19,6 +19,7 @@ with open('README.rst', 'rb') as f:
     README = f.read().decode('utf-8')
 
 export INIT_VERSION=version
+echo $INIT_VERSION
 
 setup(
     name='interfax',
