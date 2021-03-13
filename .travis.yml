@@ -14,8 +14,8 @@ install: pip install tox-travis
 - echo "$TRAVIS_COMMIT"
 - echo "$TRAVIS_BUILD_NUMBER"
 - git tag $TRAVIS_TAG $TRAVIS_COMMIT
- - python setup.py sdist --formats=zip -k
- - find ./dist -iname "*.zip" -print0 | xargs -0 pip install
+- python setup.py sdist --formats=zip -k
+- find ./dist -iname "*.zip" -print0 | xargs -0 pip install
 script: tox
 before_deploy:
 #- pytest
