@@ -18,6 +18,8 @@ with open('interfax/__init__.py', 'rb') as f:
 with open('README.rst', 'rb') as f:
     README = f.read().decode('utf-8')
 
+export INIT_VERSION=version
+
 setup(
     name='interfax',
     version=version,
