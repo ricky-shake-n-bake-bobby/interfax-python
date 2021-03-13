@@ -16,8 +16,7 @@ install:
   - echo "$TRAVIS_COMMIT"
   - echo "$TRAVIS_BUILD_NUMBER"
   - git tag $TRAVIS_TAG $TRAVIS_COMMIT
-  - echo "interfax-$version.zip"
-  - export RELEASE_PKG_FILE=".dist/interfax-$version.zip"
+  - export RELEASE_PKG_FILE="dist/interfax-$version.zip"
 script: tox
 before_deploy:
   - python setup.py sdist --formats=zip -k
