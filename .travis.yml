@@ -18,7 +18,6 @@ install: pip install tox-travis
 - find ./dist -iname "*.zip" -print0 | xargs -0 pip install
 script: tox
 before_deploy:
-#- pytest
 deploy:
   provider: releases
   api_key:
