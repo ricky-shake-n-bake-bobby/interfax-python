@@ -19,12 +19,12 @@ script: tox
 before_deploy:
   - python setup.py sdist --formats=zip -k
   - find ./dist -iname "*.zip" -print0 | xargs -0 pip install
-  - echo "$FILE_LOCATION"
+  - export RELEASE_PKG_FILE=$FILE_LOCATION
 deploy:
   provider: releases
   api_key:
     secure: eOU9udkkFEgkhY9V12f0lFAw8JyT53S5h56PbGmCkcRf4Pb46D8NwUDbfJEUa5GqyfVxb9V453PC7YmMSJe1XTgvgG85TOkNPu9Q3tVT38rFyCS/+tlNQIELBriYzBr1ymkVv73BWbhB5U+LQa+jvK5J3joIlMz2UTZlIeRP7BgyYj0sbSy8z7g15wYutig3TEEjRe8YvG6bWki2UDF0QJan4nuY1Ru1fYaEBNyzIfKCMZaNDZ4KWhzv9WfFeiFTQeXfvUsqvO0YNa64JiB0/XR2EdFoyo6dXKo8NoiJaG5TaFI4RkVfRgNSczaB9qZ6iECH2cJO2G22QMFhzEDesy/MTbBpkOcnPio0f7Ok9sMQ6qB+gArpXR+cg5RZxYZnvS8T8dsNQVS+9Hy9wpcuxgBTuvb+w49KvyaebOmp2zrmGkO+xlZWaHo86Tm8FgeZndHNWjax4pyeZ7hrPUEBD0lBHXqqJrQZKKraL+WEw3ENiIOcksLOCxZQrTLMUVkG6YR7oFqfjpdgIW/Nd2NnCJhg6emepxp6RnI4skxyJAuwzffrptDBy+CQbBbfiIwEExB1Bv228zSEEDkxvinBm01e6oMvJ5iHKyzubvzz+2cykw5LwY6bmQpDifjsleO7MOZCogXeUFiblY+ncWwB9dOExhbpGu37i+4QZxvjWnQ=
-  file: ${FILE_LOCATION}
+  file: ${RELEASE_PKG_FILE}
   skip_cleanup: true
   on:
     tags: true
